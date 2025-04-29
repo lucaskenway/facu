@@ -1,0 +1,87 @@
+programa {
+    funcao inicio() {
+
+        // EXERCÍCIO 1: Validação de nome, idade e CPF
+        cadeia nome, cpf
+        inteiro idade
+
+        faca {
+            escreva("Digite seu nome completo: ")
+            leia(nome)
+
+            escreva("Digite sua idade: ")
+            leia(idade)
+
+            escreva("Digite seu CPF (somente números, 11 dígitos): ")
+            leia(cpf)
+
+            se (idade < 0 ou idade > 150 ou comprimento(cpf) != 11) {
+                escreva("Dados inválidos. Por favor, corrija.\n\n")
+            }
+
+        } enquanto (idade < 0 ou idade > 150 ou comprimento(cpf) != 11)
+
+        escreva("Dados validados com sucesso!\n\n")
+
+
+        // EXERCÍCIO 2: Simulação de empréstimo
+        real valorEmprestimo
+        inteiro parcelas
+
+        faca {
+            escreva("Digite o valor do empréstimo desejado: R$ ")
+            leia(valorEmprestimo)
+
+            escreva("Digite o número de parcelas: ")
+            leia(parcelas)
+
+            se (valorEmprestimo > 300000) {
+                escreva("Valor acima do limite permitido (R$ 300.000). Tente novamente.\n\n")
+            }
+
+        } enquanto (valorEmprestimo > 300000)
+
+        escreva("Empréstimo aprovado com sucesso!\n\n")
+
+
+        // EXERCÍCIO 3: Reserva de quarto
+        cadeia nomeCliente
+        inteiro entrada, saida, hospedes
+
+        faca {
+            escreva("Digite o nome do cliente: ")
+            leia(nomeCliente)
+
+            escreva("Digite a data de entrada (formato AAAAMMDD): ")
+            leia(entrada)
+
+            escreva("Digite a data de saída (formato AAAAMMDD): ")
+            leia(saida)
+
+            escreva("Digite o número de hóspedes: ")
+            leia(hospedes)
+
+            se (saida <= entrada ou hospedes > 4) {
+                escreva("Erro: data inválida ou número de hóspedes excede o limite. Tente novamente.\n\n")
+            }
+
+        } enquanto (saida <= entrada ou hospedes > 4)
+
+        escreva("Reserva registrada com sucesso!\n\n")
+
+
+        // EXERCÍCIO 4: Controle de estoque
+        inteiro estoque, reposicao
+
+        escreva("Digite a quantidade atual de itens em estoque: ")
+        leia(estoque)
+
+        faca {
+            escreva("Estoque abaixo do mínimo (mínimo = 10). Informe a quantidade para reposição: ")
+            leia(reposicao)
+            estoque = estoque + reposicao
+        } enquanto (estoque < 10)
+
+        escreva("Estoque atualizado com sucesso! Quantidade atual: ", estoque, "\n\n")
+    }
+}
