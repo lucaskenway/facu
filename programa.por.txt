@@ -1,0 +1,84 @@
+programa
+{
+	inclua biblioteca Texto -->t
+	funcao inicio ()
+	{
+        cadeia nome, cpf
+        inteiro idade
+
+        faca {
+            escreva("Digite o nome completo: ")
+            leia(nome)
+
+            escreva("Digite a idade: ")
+            leia(idade)
+
+            escreva("Digite o CPF (somente números, 11 dígitos): ")
+            leia(cpf)
+
+            se (idade < 0 ou idade > 150 ou comprimento(cpf) == 11) 
+                escreva("Dados inválidos. Tente novamente.\n")
+		}
+            
+ enquanto (idade < 0 ou idade > 150 ou comprimento(cpf) != 11)
+
+        escreva("Dados validados com sucesso!")
+		
+        real valorEmprestimo
+        inteiro parcelas
+
+        faca {
+            escreva("Digite o valor do empréstimo: R$ ")
+            leia(valorEmprestimo)
+
+            escreva("Digite o número de parcelas: ")
+            leia(parcelas)
+
+            se (valorEmprestimo > 300000) {
+                escreva("Valor acima do limite permitido (R$300.000). Tente novamente.\n")
+            }
+
+        } enquanto (valorEmprestimo > 300000)
+
+        escreva("Empréstimo aprovado com sucesso!")
+		
+        cadeia nome
+        inteiro dataEntrada, dataSaida, hospedes
+
+        faca {
+            escreva("Digite o nome do cliente: ")
+            leia(nome)
+
+            escreva("Digite a data de entrada (formato AAAAMMDD): ")
+            leia(dataEntrada)
+
+            escreva("Digite a data de saída (formato AAAAMMDD): ")
+            leia(dataSaida)
+
+            escreva("Digite o número de hóspedes: ")
+            leia(hospedes)
+
+            se (dataSaida <= dataEntrada ou hospedes > 4) {
+                escreva("Dados inválidos. Tente novamente.\n")
+            }
+
+        } enquanto (dataSaida <= dataEntrada ou hospedes > 4)
+
+        escreva("Reserva registrada com sucesso!")
+		
+        inteiro estoque, reposicao
+
+        escreva("Digite a quantidade atual de itens em estoque: ")
+        leia(estoque)
+
+        faca {
+            escreva("Estoque abaixo do mínimo! Digite a quantidade para reposição: ")
+            leia(reposicao)
+            estoque = estoque + reposicao
+
+        } enquanto (estoque < 10)
+
+        escreva("Estoque atualizado com sucesso! Quantidade atual: ", estoque)
+
+	}
+}
